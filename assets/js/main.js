@@ -29,13 +29,13 @@ function titulosCorrectos(){
             titleCorrecto[correctas[k]].style.color="green";
             respuesta[correctas[k]].checked =true;
             indiceAnterior = correctas[k];
-            imagen.src = "../img/"+IMAG[k]+".jpg";
+            imagen.src = "./assets/img/"+IMAG[k]+".jpg";
             numero.innerHTML = k+1;
             k++;
         }
         else{
             indiceAnterior = correctas[k];
-            imagen.src = "../img/"+IMAG[k]+".jpg";
+            imagen.src = "./assets/img/"+IMAG[k]+".jpg";
             numero.innerHTML = k+1;
             k++;
         }
@@ -54,7 +54,7 @@ function mostrarResultados(){
     let respuesta = document.getElementsByName("c");
     let imagen = document.getElementById("fotos");
     let numero = document.getElementById("Num");
-    imagen.src = "../img/"+IMAG[0]+".jpg";
+    imagen.src = "./assets/img/"+IMAG[0]+".jpg";
     titleCorrecto[2].style.color="green";
     respuesta[2].checked =true;
     this.onclick = titulosCorrectos;
@@ -79,13 +79,12 @@ function modificarPagina(){
         let numero = document.getElementById("Num");
         numero.innerHTML = i +1;
         let imagen = document.getElementById("fotos");
-        imagen.src = "../img/"+IMAG[i++]+".jpg";
+        imagen.src = "./assets/img/"+IMAG[i++]+".jpg";
         let respuesta = document.getElementsByName("c");
         if(respuesta[correctas[j++]].checked){
             aciertos++;
         }
     }
-    console.log(i,"puntos",aciertos);
 }
 
 
@@ -95,5 +94,4 @@ window.onload = function() {
     let continuar = document.getElementById("Con");
     continuar.style.color = "red";
     continuar.onclick = modificarPagina;
-
 }
